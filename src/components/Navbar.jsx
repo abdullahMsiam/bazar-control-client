@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
-    const { user } = useAuth();
-    const photo = user?.photoURL
+    const { user, logOut } = useAuth();
+    const photo = user?.photoURL;
+
+    const handleLogout = () => {
+        logOut();
+    }
     return (
         <div>
             <div className="navbar bg-black text-white">
@@ -17,7 +21,7 @@ const Navbar = () => {
                         {
                             user ?
                                 <div className="flex items-center gap-2">
-                                    <button className="btn btn-error btn-outline btn-sm">Logout</button>
+                                    <button onClick={() => handleLogout()} className="btn btn-error btn-outline btn-sm">Logout</button>
                                     <img className="rounded-full w-10 border" src={photo} alt="" />
                                 </div> :
                                 <div className="flex items-center gap-2">

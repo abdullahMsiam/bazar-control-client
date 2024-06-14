@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import DashProducts from "../pages/dashboard/DashProducts";
 import AddProduct from "../pages/dashboard/AddProduct";
+import UpdateProduct from "../pages/dashboard/UpdateProduct";
 
 
 const router = createBrowserRouter([
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch("http://localhost:3000/products")
+                loader: () => fetch("https://bazar-control-server.onrender.com/products")
             },
             {
                 path: "/login",
@@ -40,17 +41,21 @@ const router = createBrowserRouter([
             {
                 path: "dashboard/all-products",
                 element: <DashProducts />,
-                loader: () => fetch("http://localhost:3000/products")
+                loader: () => fetch("https://bazar-control-server.onrender.com/products")
             },
             {
                 path: "dashboard/add-product",
                 element: <AddProduct />,
+
             },
+            {
+                path: "dashboard/all-products/edit/:id",
+                element: <UpdateProduct />
+                // loader: ({params}) => fetch(`http://localhost:3000/products/${params.id}`)
+            }
         ]
     }
 ]);
 
-// 01333 411273
-// 01893 894443
 
 export default router; 

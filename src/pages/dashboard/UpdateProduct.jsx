@@ -1,5 +1,6 @@
 
-const AddProduct = () => {
+const UpdateProduct = () => {
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,7 +14,6 @@ const AddProduct = () => {
         const color = form.color.value;
         const in_stock = form.stock.value;
         const image_url = form.image.value;
-
 
         const product = { name, brand, price, description, color, in_stock, image_url }
         console.log(name, brand, price, description, color, in_stock, image_url);
@@ -66,7 +66,7 @@ const AddProduct = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <input className="btn btn-outline bg-white" type="submit" value="Add The product" />
+                        <input className="btn btn-outline bg-white" type="submit" value="Update The product" />
                     </div>
                 </form>
             </div>
@@ -74,4 +74,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default UpdateProduct;
